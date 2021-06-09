@@ -1,8 +1,20 @@
-item1 = { name: "cookie", color: "brown", price: "$1" }
-item2 = { name: "soda", color: "red", price: "$2" }
-item3 = { name: "chips", color: "yellow", price: "$5" }
-p item1[:name]
-p item2[:color]
-p item3[:name]
-items = { name: ["gum", "candy", "iphone"], color: ["pink", "rainbow", "silver"], price: ["$3", "$4", "$700"] }
-p items
+class Items
+  attr_reader :name, :price
+  attr_accessor :color
+
+  def initialize(name, price, color)
+    @name = name
+    @price = price
+    @color = color
+  end
+
+  def description
+    puts "This #{@name} cost $#{@price}"
+  end
+end
+
+item1 = Items.new("cookie", "2", "brown")
+item1.description
+p item1.color
+item1.color = ("white")
+p item1.color
